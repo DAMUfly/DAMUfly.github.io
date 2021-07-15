@@ -393,7 +393,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">446</span> In Total
+              Words <span class="post-count">485</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -466,7 +466,7 @@
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangzhuxing/p/9351245.html">参考文章</a></p>
 <p>按照博客步骤下载安装，并修改config中的文件</p>
 <p>在bin目录下输入 ./elasticsearch -d可以后台运行es，输入curl localhost:配置文件中设置的端口  显示以下界面表示es已经部署成功（注意对照name和cluster_name是不是配置文件中设置的）<br>
-<img src="./elk/es.png" alt="es"></p>
+<img src="es.png" alt="es"></p>
 <h3 id="在服务器上安装logstash">在服务器上安装logstash</h3>
 <p><a target="_blank" rel="noopener" href="https://elasticsearch.cn/article/6141">参考文章</a><br>
 在config目录下新建一个logstash.conf 进行配置</p>
@@ -475,7 +475,12 @@
 <p>在bin目录下输入<br>
 <code>./logstash -e 'input &#123; stdin &#123; &#125; &#125; output &#123; stdout &#123; codec =&gt; rubydebug &#125; &#125;'</code></p>
 <p>启动成功后输入 <code>hello logstash</code> 可以看到已经可以格式化输出了</p>
-<h3 id="在服务器上安装">在服务器上安装</h3>
+<h3 id="在服务器上安装kibana">在服务器上安装kibana</h3>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/cb2474600377/article/details/78963247">参考文章</a></p>
+<p>修改下图的三项<br>
+<img src="kibana1.png" alt="kibana1"></p>
+<h4 id="启动-2">启动</h4>
+<p>在根目录下输入 <code>./bin/kibana</code> 启动成功并连接es成功后显示如下图</p>
 
 
         <hr>
@@ -621,7 +626,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">搭建步骤</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85es"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">在服务器上安装es</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85logstash"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">在服务器上安装logstash</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">启动</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">在服务器上安装</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">搭建步骤</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85es"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">在服务器上安装es</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85logstash"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">在服务器上安装logstash</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">启动</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85kibana"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">在服务器上安装kibana</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%90%AF%E5%8A%A8-2"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">启动</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
