@@ -383,7 +383,7 @@
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by joan on
-              2021-07-15
+              2021-07-22
             </span>
 
 
@@ -395,7 +395,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">276</span> In Total
+              Words <span class="post-count">277</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -457,32 +457,42 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>APISIX是一个开源项目，基于云原生的微服务api网关，它是所有业务流量的入口，用来处理所有的业务数据</p>
+        <h2 id="概述">概述</h2>
+<p>APISIX是一个开源项目，基于云原生的微服务api网关，它是所有业务流量的入口，用来处理所有的业务数据</p>
 <p>APISIX 通过插件机制，提供动态负载平衡、身份验证、限流限速等功能，并且支持你自己开发的插件。</p>
 <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/apache/apisix/">https://github.com/apache/apisix/</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>首先根据系统不同需要不同的安装依赖，详见官方文档：<a target="_blank" rel="noopener" href="https://github.com/apache/apisix/blob/master/docs/en/latest/install-dependencies.md">安装依赖文档</a></p>
-<p>这里以CentOS 7为例<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> install etcd</span></span><br><span class="line">wget https://github.com/etcd-io/etcd/releases/download/v3.4.13/etcd-v3.4.13-linux-amd64.tar.gz</span><br><span class="line">tar -xvf etcd-v3.4.13-linux-amd64.tar.gz &amp;&amp; \</span><br><span class="line">    cd etcd-v3.4.13-linux-amd64 &amp;&amp; \</span><br><span class="line">    sudo cp -a etcd etcdctl /usr/bin/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> add OpenResty <span class="built_in">source</span></span></span><br><span class="line">sudo yum install yum-utils</span><br><span class="line">sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> install OpenResty and some compilation tools</span></span><br><span class="line">sudo yum install -y openresty curl git gcc openresty-openssl111-devel unzip</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> install LuaRocks</span></span><br><span class="line">curl https://raw.githubusercontent.com/apache/apisix/master/utils/linux-install-luarocks.sh -sL | bash -</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> start etcd server</span></span><br><span class="line">nohup etcd &amp;</span><br></pre></td></tr></table></figure><br>etcd配置文件详解：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/itzgr/p/9920910.html#_label0">https://www.cnblogs.com/itzgr/p/9920910.html#_label0</a></p>
-<h3 id="安装Apache-APISIX"><a href="#安装Apache-APISIX" class="headerlink" title="安装Apache APISIX"></a>安装Apache APISIX</h3><p>官方文档：<a target="_blank" rel="noopener" href="https://github.com/apache/apisix/blob/master/docs/en/latest/how-to-build.md">https://github.com/apache/apisix/blob/master/docs/en/latest/how-to-build.md</a></p>
+<h2 id="安装">安装</h2>
+<h3 id="安装依赖">安装依赖</h3>
+<p>首先根据系统不同需要不同的安装依赖，详见官方文档：<a target="_blank" rel="noopener" href="https://github.com/apache/apisix/blob/master/docs/en/latest/install-dependencies.md">安装依赖文档</a></p>
+<p>这里以CentOS 7为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> install etcd</span></span><br><span class="line">wget https://github.com/etcd-io/etcd/releases/download/v3.4.13/etcd-v3.4.13-linux-amd64.tar.gz</span><br><span class="line">tar -xvf etcd-v3.4.13-linux-amd64.tar.gz &amp;&amp; \</span><br><span class="line">    cd etcd-v3.4.13-linux-amd64 &amp;&amp; \</span><br><span class="line">    sudo cp -a etcd etcdctl /usr/bin/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> add OpenResty <span class="built_in">source</span></span></span><br><span class="line">sudo yum install yum-utils</span><br><span class="line">sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> install OpenResty and some compilation tools</span></span><br><span class="line">sudo yum install -y openresty curl git gcc openresty-openssl111-devel unzip</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> install LuaRocks</span></span><br><span class="line">curl https://raw.githubusercontent.com/apache/apisix/master/utils/linux-install-luarocks.sh -sL | bash -</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> start etcd server</span></span><br><span class="line">nohup etcd &amp;</span><br></pre></td></tr></table></figure>
+<p>etcd配置文件详解：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/itzgr/p/9920910.html#_label0">https://www.cnblogs.com/itzgr/p/9920910.html#_label0</a></p>
+<h3 id="安装Apache-APISIX">安装Apache APISIX</h3>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://github.com/apache/apisix/blob/master/docs/en/latest/how-to-build.md">https://github.com/apache/apisix/blob/master/docs/en/latest/how-to-build.md</a></p>
 <!-- 有两种安装方式：
 #### 安装源包
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建一个名为`apisix-2.7`的目录</span></span><br><span class="line">mkdir apisix-2.7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 下载Apache APISIX 安装包</span></span><br><span class="line">wget https://downloads.apache.org/apisix/2.7/apache-apisix-2.7-src.tgz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar zxvf apache-apisix-2.7-src.tgz -C apisix-2.7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Switch to the apisix-2.7 directory</span></span><br><span class="line">cd apisix-2.7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Create dependencies</span></span><br><span class="line">make deps</span><br><span class="line">``` --&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">### 安装RPM Package(CentOS 7)</span></span></span><br><span class="line">```shell</span><br><span class="line">sudo yum install -y https://github.com/apache/apisix/releases/download/2.7/apisix-2.7-0.x86_64.rpm</span><br></pre></td></tr></table></figure>
-<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">启动</span></span><br><span class="line">apisix start</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">停止</span></span><br><span class="line">apisix stop</span><br></pre></td></tr></table></figure>
-<h3 id="安装apisix-dashboard"><a href="#安装apisix-dashboard" class="headerlink" title="安装apisix-dashboard"></a>安装apisix-dashboard</h3><p>官方文档：<a target="_blank" rel="noopener" href="https://github.com/apache/apisix-dashboard/blob/master/docs/en/latest/deploy-with-rpm.md">https://github.com/apache/apisix-dashboard/blob/master/docs/en/latest/deploy-with-rpm.md</a></p>
-<h4 id="安装RPM-Package-CentOS-7"><a href="#安装RPM-Package-CentOS-7" class="headerlink" title="安装RPM Package(CentOS 7)"></a>安装RPM Package(CentOS 7)</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y https://github.com/apache/apisix-dashboard/releases/download/v2.6/apisix-dashboard-2.6-0.x86_64.rpm</span><br></pre></td></tr></table></figure>
-<h4 id="使用方式-1"><a href="#使用方式-1" class="headerlink" title="使用方式"></a>使用方式</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">启动</span></span><br><span class="line">sudo nohup manager-api -p /usr/local/apisix/dashboard/ &amp;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> or manager-api as a service</span></span><br><span class="line">sudo manager-api start -p /usr/local/apisix/dashboard/</span><br></pre></td></tr></table></figure>
+<p>安装完成后，文件路径在 /usr/local/apisix<br>
+可以通过修改apisix/conf/nginx.conf 修改配置</p>
+<h4 id="使用方式">使用方式</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">启动</span></span><br><span class="line">apisix start</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">停止</span></span><br><span class="line">apisix stop</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">重载</span></span><br><span class="line">apisix reload</span><br></pre></td></tr></table></figure>
+<h4 id="修改配置文件">修改配置文件</h4>
+<h3 id="安装apisix-dashboard">安装apisix-dashboard</h3>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://github.com/apache/apisix-dashboard/blob/master/docs/en/latest/deploy-with-rpm.md">https://github.com/apache/apisix-dashboard/blob/master/docs/en/latest/deploy-with-rpm.md</a><br>
+<strong>注：dashboard2.7只支持apisix2.6</strong></p>
+<h4 id="安装RPM-Package-CentOS-7">安装RPM Package(CentOS 7)</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y https://github.com/apache/apisix-dashboard/releases/download/v2.6/apisix-dashboard-2.6-0.x86_64.rpm</span><br></pre></td></tr></table></figure>
+<h4 id="使用方式-2">使用方式</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">启动</span></span><br><span class="line">sudo nohup manager-api -p /usr/local/apisix/dashboard/ &amp;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> or manager-api as a service</span></span><br><span class="line">sudo manager-api start -p /usr/local/apisix/dashboard/</span><br></pre></td></tr></table></figure>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/python_high/" data-toggle="tooltip" data-placement="top" title="python核心技术与实战（进阶篇）">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/elk/" data-toggle="tooltip" data-placement="top" title="elk日志管理搭建">Next Post &rarr;</a>
+            <a href="/cn/python_high/" data-toggle="tooltip" data-placement="top" title="python核心技术与实战（进阶篇）">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -566,7 +576,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Thu Jul 15 2021 20:08:27 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Thu Jul 22 2021 20:08:27 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
