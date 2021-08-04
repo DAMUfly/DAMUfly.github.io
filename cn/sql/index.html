@@ -393,7 +393,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">485</span> In Total
+              Words <span class="post-count">497</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -458,20 +458,25 @@
         <h2 id="sql语法">sql语法</h2>
 <p><img src="https://www.runoob.com/sql/sql-quickref.html" alt="sql快速参考"></p>
 <h3 id="查SELECT">查SELECT</h3>
-<p>SELECT/SELECT DICTINCT * FROM 表名<br>
+<blockquote>
+<p>SELECT/SELECT DICTINCT * AS 重命名<br>
+FROM 表名<br>
 WHERE id=1<br>
 WHERE name=‘nan%’/name=‘nan_’<br>
 AND (name=‘nanj’ OR name=‘li’)<br>
-ORDER BY id ASC|DESC;<br>
-SELECT 列 INTO 表名<br>
-where子句中的运算符：= &lt;&gt; &gt; &lt; BETWEEN<br>
-AND &amp; OR 运算符<br>
-ORDER BY 排序<br>
-LIKE 匹配符 WHERE name LIKE ‘nan%’/‘nan_’<br>
-IN/NOT IN 操作符可以指定多个值 WHERE name IN(value1,value2,…)<br>
-BETWEEN WHERE name NOT/BETWEEN value1 AND value2<br>
-IS NULL/IS NOT NULL<br>
-LIMIT 5 返回前5行</p>
+ORDER BY id ASC|DESC;</p>
+</blockquote>
+<ul>
+<li>SELECT 列 INTO 表名 (把列插入到新表中)</li>
+<li>where子句中的运算符：= &lt;&gt; &gt; &lt; BETWEEN</li>
+<li>AND &amp; OR 运算符</li>
+<li>ORDER BY 排序</li>
+<li>LIKE 匹配符 WHERE name LIKE ‘nan%’/‘nan_’</li>
+<li>IN/NOT IN 操作符可以指定多个值 WHERE name IN(value1,value2,…)</li>
+<li>BETWEEN WHERE name NOT/BETWEEN value1 AND value2</li>
+<li>IS NULL/IS NOT NULL</li>
+<li>LIMIT 5 返回前5行</li>
+</ul>
 <h3 id="增删改INSERT">增删改INSERT</h3>
 <p>INSERT INTO 表名<br>
 VALUES (2,‘nanj’,‘test’)</p>
