@@ -393,7 +393,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">497</span> In Total
+              Words <span class="post-count">558</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,7 +475,7 @@ ORDER BY id ASC|DESC;</p>
 <li>IN/NOT IN 操作符可以指定多个值 WHERE name IN(value1,value2,…)</li>
 <li>BETWEEN WHERE name NOT/BETWEEN value1 AND value2</li>
 <li>IS NULL/IS NOT NULL</li>
-<li>LIMIT 5 返回前5行</li>
+<li>LIMIT 5 返回前5行/1,1 第一个参数是初始位置，第二个是输出条目数量/OFFSET与逗号类似，唯一的差别参数位置颠倒</li>
 </ul>
 <h3 id="增删改INSERT">增删改INSERT</h3>
 <p>INSERT INTO 表名<br>
@@ -547,7 +547,8 @@ ON table_name (column_name)</p>
 <li>NOW()</li>
 </ul>
 <h4 id="GROUP-BY聚合函数-与-HAVING">GROUP BY聚合函数 与 HAVING</h4>
-<p>根据一个或多个列对结果集进行分组</p>
+<p>根据一个或多个列对结果集进行分组，分组是很黑盒的操作，HAVING也很黑盒<br>
+要想象已经分组了</p>
 <p>SELECT site_id, SUM(access_log.count) AS nums<br>
 FROM access_log GROUP BY site_i<br>
 HAVING SUM(access_log.count) &gt; 200;</p>
